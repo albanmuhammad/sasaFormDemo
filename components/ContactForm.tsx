@@ -70,8 +70,9 @@ export default function ContactForm() {
         }
     };
 
+    // Ubah bagian inputClass Anda menjadi seperti ini:
     const inputClass =
-        "w-full border-b border-zinc-300 py-3 bg-transparent focus:border-red-600 focus:outline-none transition-colors";
+        "w-full border-b border-zinc-300 py-3 bg-transparent text-zinc-900 placeholder:text-zinc-500 focus:border-red-600 focus:outline-none transition-colors";
 
     return (
         <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto p-8 bg-white shadow-sm rounded-lg">

@@ -27,23 +27,25 @@ body {
 
 /* --- TAMBAHKAN INI UNTUK MENYERAGAMKAN INPUT --- */
 @layer base {
+  /* Memaksa input dan textarea memiliki warna yang tegas */
   input,
   textarea {
-    color: var(--foreground);
+    color: #171717 !important;
   }
 
-  /* Menyamakan warna placeholder di semua browser */
-  ::placeholder {
-    color: #a1a1aa; /* Warna zinc-400 */
-    opacity: 1;
+  /* Memaksa placeholder agar tidak pudar (default Chrome sering mengubah opacity) */
+  input::placeholder,
+  textarea::placeholder {
+    color: #71717a !important; /* Zinc-500, warna abu-abu yang cukup jelas */
+    opacity: 1 !important;
   }
 
-  /* Menghilangkan efek autofill kuning di Chrome */
+  /* Menghilangkan background kuning saat Chrome mengisi data otomatis (autofill) */
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--foreground);
-    -webkit-box-shadow: 0 0 0px 1000px var(--background) inset;
+    -webkit-text-fill-color: #171717 !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset; /* Sesuaikan dengan background form Anda */
     transition: background-color 5000s ease-in-out 0s;
   }
 }
