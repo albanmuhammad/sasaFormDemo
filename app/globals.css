@@ -24,3 +24,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* --- TAMBAHKAN INI UNTUK MENYERAGAMKAN INPUT --- */
+@layer base {
+  input,
+  textarea {
+    color: var(--foreground);
+  }
+
+  /* Menyamakan warna placeholder di semua browser */
+  ::placeholder {
+    color: #a1a1aa; /* Warna zinc-400 */
+    opacity: 1;
+  }
+
+  /* Menghilangkan efek autofill kuning di Chrome */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--foreground);
+    -webkit-box-shadow: 0 0 0px 1000px var(--background) inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
